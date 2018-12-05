@@ -8,6 +8,13 @@ import com.example.alessandra.themealalessandra.entities.Refeicao
 import kotlinx.android.synthetic.main.activity_lista_refeicoes.*
 
 class MainActivity : AppCompatActivity(), MainContract.View {
+    override fun showLoading() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun hideLoading() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 
     override fun showMessage(msg: String) {

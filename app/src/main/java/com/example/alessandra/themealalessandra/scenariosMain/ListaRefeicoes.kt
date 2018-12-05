@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_lista_refeicoes.*
 import android.widget.ProgressBar
 
 class ListaRefeicoes : AppCompatActivity(), MainContract.View {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_refeicoes)
@@ -39,6 +38,13 @@ class ListaRefeicoes : AppCompatActivity(), MainContract.View {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 
+    override fun showLoading() {
+        pbLoading.visibility = ProgressBar.VISIBLE
+    }
+
+    override fun hideLoading() {
+        pbLoading.visibility = ProgressBar.INVISIBLE
+    }
 
 }
 

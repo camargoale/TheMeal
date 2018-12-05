@@ -7,6 +7,8 @@ interface MainContract {
     interface View{
         fun showMessage(msg: String)
         fun showList(refeicoes: List<Refeicao>)
+        fun showLoading()
+        fun hideLoading()
 
     }
 
