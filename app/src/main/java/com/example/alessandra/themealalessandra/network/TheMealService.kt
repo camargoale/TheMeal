@@ -8,12 +8,10 @@ interface TheMealService {
 
     companion object {
         private const val API_KEY = "1"
+        private const val id = 0
     }
 
     @GET ("latest.php?$API_KEY")
     fun getLatest(): Call<RefeicaoList>
-
-
-
 
 }

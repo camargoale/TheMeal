@@ -1,15 +1,15 @@
 package com.example.alessandra.themealalessandra.scenariosMain
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.alessandra.themealalessandra.R
 import com.example.alessandra.themealalessandra.entities.Refeicao
+import com.example.alessandra.themealalessandra.refeicao_detalhada
 import kotlinx.android.synthetic.main.activity_lista_refeicoes.*
-import android.widget.ProgressBar
 
 class ListaRefeicoes : AppCompatActivity(), MainContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +24,13 @@ class ListaRefeicoes : AppCompatActivity(), MainContract.View {
 
         val adapter = RefeicaoAdapter(this, refeicoes)
 
-//        adapter.setOnItemClickListener { position ->
-//            val openBrowser = Intent(Intent.ACTION_VIEW)
-//            openBrowser.data = Uri.parse(meals.get(position).url)
-//            startActivity(openBrowser)
-//        }
-
+        adapter.setOnItemClickListener { position ->
+            val detalheRefeicao = Intent(this, refeicao_detalhada::class.java)
+            //detalheRefeicao.putExtra("openRefNome", refeicoes[position].strMeal)
+            //detalheRefeicao.putExtra("openRefPreparo", refeicoes[position].strInstructions)
+            //detalheRefeicao.putExtra("openRefImg", refeicoes[position].strMealThumb)
+            startActivity(detalheRefeicao)
+        }
         rvRefeicoes.adapter = adapter
         rvRefeicoes.layoutManager = LinearLayoutManager(this)
     }
